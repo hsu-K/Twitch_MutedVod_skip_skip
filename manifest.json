@@ -1,0 +1,32 @@
+{
+  "name": "TwitchVod_skip_skip",
+  "version": "0.1.0",
+  "description": "Skip the muted sections of Twitch VOD due to copyright",
+  "icons":{
+    "16": "assets/icon.png",
+    "32": "assets/icon.png",
+    "48": "assets/icon.png",
+    "128": "assets/icon.png"
+  },
+  "permissions": [],
+  "host_permissions": ["https://www.twitch.tv/videos/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.twitch.tv/videos/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "action": {
+    "default_icon" : {
+      "16": "assets/icon.png",
+      "32": "assets/icon.png",
+      "48": "assets/icon.png",
+      "128": "assets/icon.png"
+    },
+    "default_title": "Skip Twitch muted Vod"
+  },
+  "manifest_version": 3
+}
